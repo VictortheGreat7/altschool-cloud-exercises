@@ -1,0 +1,14 @@
+binutils
+gcc
+glibc
+gmp
+go@1.20
+isl
+libmpc
+linux-headers@5.15
+lz4
+mpfr
+oh-my-posh
+xz
+zlib
+zstd
