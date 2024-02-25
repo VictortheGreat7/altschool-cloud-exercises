@@ -1,0 +1,40 @@
+SYSTEM INFORMATION COMMANDS
+
+$ uname -a
+$ date
+$ uptime
+$ whoami
+$ export VAR=VALUE
+$ echo $VAR
+$ ps
+$ top
+$ df -h
+$ timedatectl list-timezones
+
+COMMANDS FOR MOVING AROUND
+
+$ pwd
+$ cd DIR
+$ ls
+
+COMMANDS FOR FILE OPERATIONS
+
+$ mkdir DIR
+$ touch FILE
+$ cp FILE FILE
+$ mv FILE FILE
+$ rm FILE
+$ cat FILE
+$ head FILE
+$ tail FILE
+
+COMMANDS FOR TEXT EDITORS
+
+$ vim
+$ nano
+
+COMMANDS FOR SEEKING HELP
+
+$ man COMMAND
+$ COMMAND -h
+$ COMMAND --help
