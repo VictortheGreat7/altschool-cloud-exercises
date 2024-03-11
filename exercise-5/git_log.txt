@@ -1,0 +1,59 @@
+commit 0e268872f065558723f35bfaf387dbdccdff0622
+Author: Great-Victor Anjorin <greatvictor.anjorin@gmail.com>
+Date:   Sat Mar 2 12:12:43 2024 +0100
+
+    Application Package Exercise attempt
+
+commit 46bff11c83dd8a850f4b81fc2924a1b1327946b4
+Author: Great-Victor Anjorin <greatvictor.anjorin@gmail.com>
+Date:   Fri Mar 1 09:08:29 2024 +0100
+
+    Third exercise attempt
+
+commit fc84a056b5aae037472e3b9688686c26f91b5a1e
+Author: Great-Victor Anjorin <greatvictor.anjorin@gmail.com>
+Date:   Thu Feb 29 14:02:28 2024 +0100
+
+    Added a new line at the end
+
+commit 091e70a83a29037dfc723ea4705c745a21c3b506
+Author: Great-Victor Anjorin <greatvictor.anjorin@gmail.com>
+Date:   Thu Feb 29 14:01:40 2024 +0100
+
+    Gave and removed some spacing
+
+commit 5b345e4acbe4e816d5b51c37f6caa22abfaf2d54
+Author: Great-Victor Anjorin <greatvictor.anjorin@gmail.com>
+Date:   Thu Feb 29 13:55:19 2024 +0100
+
+    More commands and screenshots added
+
+commit 1b0018928bb616bd1f2a69fad2f2f1e96ce1db0e
+Author: Great-Victor Anjorin <greatvictor.anjorin@gmail.com>
+Date:   Sun Feb 25 10:49:54 2024 +0100
+
+    Moving to Jammy JellyFish
+
+commit 4ebb9d31230db3c8ac2fe74d4a26fe87b5ce9abb
+Author: Great-Victor Anjorin <greatvictor.anjorin@gmail.com>
+Date:   Sat Jan 13 08:44:24 2024 +0000
+
+    Oh my Posh executable files
+
+commit 85892d394fb63041e5f0ff245408b344f6a70617
+Author: Great-Victor Anjorin <greatvictor.anjorin@gmail.com>
+Date:   Sat Jan 13 08:41:10 2024 +0000
+
+    Snap Packages to install
+
+commit f70f29a5161db1730416c8ab2c79cbc9cd6cae1a
+Author: Great-Victor Anjorin <greatvictor.anjorin@gmail.com>
+Date:   Sat Jan 13 08:36:44 2024 +0000
+
+    Packages to install
+
+commit 3f692e2dae514cc270265e45d594712aab4db9c4
+Author: Great-Victor Anjorin <greatvictor.anjorin@gmail.com>
+Date:   Fri Jan 12 23:32:35 2024 +0000
+
+    first commit
