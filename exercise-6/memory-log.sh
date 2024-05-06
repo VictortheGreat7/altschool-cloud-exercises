@@ -54,18 +54,19 @@ reset_log_file() {
 # Main function
 main() {
     # Create log file and append date and memory usage to it
+    mkdir -p $memory_log_directory
     date >> $memory_log_directory/log_file.log
     free >> $memory_log_directory/log_file.log
     echo "---" >> $memory_log_directory/log_file.log
 
-    # Check if its midnight
-    if [ $(date +"%H") == "00" ]; then
-        # Send email with memory usage data
+     # Check if its midnight
+     if [ $(date +"%H") == "00" ]; then
+         # Send email with memory usage data
         send_email
 
-        # Reset the log file for the next day
-        reset_log_file
-    fi
+         # Reset the log file for the next day
+         reset_log_file
+     fi
 }
 
 # Call the main function
