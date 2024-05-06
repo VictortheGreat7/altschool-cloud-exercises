@@ -1,0 +1,31 @@
+- name: Setup Apache Server
+  hosts: main
+  connection: local
+  become: true
+  tasks:
+    - name: Install Apache
+      apt:
+        name: apache2
+        state: present
+      tags: apache
+
+    - name: Ensure Apache service is running and enabled
+      service:
+        name: apache2
+        state: started
+        enabled: yes
+      tags: apache
+
+    - name: Set timezone to Africa/Lagos
+      timezone:
+        name: Africa/Lagos
+      tags: timezone
+
+    - name: Create index.php file
+      copy:
+        content: |
+          <?php
+          echo date("F d, Y h:i:s A e", time());
+          ?>
+        dest: /var/www/html/index.php
+      tags: apache

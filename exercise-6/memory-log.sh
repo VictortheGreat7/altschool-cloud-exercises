@@ -21,7 +21,7 @@ send_email() {
         email_content+="\n\n$email_body"
 
         # Send email with attachment and the prepared content
-        mail_result=$(echo -e $email_content | mail -s $email_subject -a $memory_log_directory/log_file.log $email_recipient)
+        mail_result=$(echo -e $email_content | mail -s $email_subject $email_recipient)
         mail_result_code=$?
 
         # Check if the email was sent successfully
@@ -60,13 +60,13 @@ main() {
     echo "---" >> $memory_log_directory/log_file.log
 
      # Check if its midnight
-     if [ $(date +"%H") == "00" ]; then
-         # Send email with memory usage data
-        send_email
+    #  if [ $(date +"%H") == "00" ]; then
+    #      # Send email with memory usage data
+    send_email
 
-         # Reset the log file for the next day
-         reset_log_file
-     fi
+    #      # Reset the log file for the next day
+    #      reset_log_file
+    #  fi
 }
 
 # Call the main function
