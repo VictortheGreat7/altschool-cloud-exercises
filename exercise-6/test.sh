@@ -16,23 +16,16 @@ send_email() {
 
     # Check if the log file exists before sending
     if [ -f "$memory_log_directory/log_file.log" ]; then
-        # Prepare the actual email content
-        email_content=$(cat "$memory_log_directory/log_file.log")
-        email_content+="\n\n$email_body"
-
-        # Send email with attachment and the prepared content
-        mail_result=$(echo -e "$email_content" | mail -s "$email_subject" -a "$memory_log_directory/log_file.log" "$email_recipient")
+        # Send email with attachment
+        echo "$email_body" | mail -s "$email_subject" -a "$memory_log_directory/log_file.log" "$email_recipient"
         mail_result_code=$?
 
         # Check if the email was sent successfully
-        case $mail_result_code in
-            0)
-                echo "Memory usage report for $(date +"%Y-%m-%d") sent successfully." >> "$memory_log_directory/success.log"
-                ;;
-            *)
-                echo "Error sending email: $mail_result" >> "$memory_log_directory/error.log"
-                ;;
-        esac
+        if [ $mail_result_code -eq 0 ]; then
+            echo "Memory usage report for $(date +"%Y-%m-%d") sent successfully." >> "$memory_log_directory/success.log"
+        else
+            echo "Error sending email: $mail_result_code" >> "$memory_log_directory/error.log"
+        fi
     else
         # Log file not found
         echo "Memory usage log for $(date +"%Y-%m-%d") not found. Email not sent." >> "$memory_log_directory/error.log"
@@ -57,18 +50,19 @@ reset_log_file() {
 main() {
     # Create log directory if it doesn't exist
     mkdir -p "$memory_log_directory"
-    date >> $memory_log_directory/log_file.log
-    free >> $memory_log_directory/log_file.log
-    echo "---" >> $memory_log_directory/log_file.log
 
-    # Check if its midnight
-    if [ $(date +"%H") == "00" ]; then
-    # Send email with memory usage data
-        send_email
+    # Append date and memory usage to log file
+    {
+        date
+        free
+        echo "---"
+    } >> "$memory_log_directory/log_file.log"
 
-        # Reset the log file for the next day
-        reset_log_file
-    fi
+    # Send the email with the memory usage report
+    send_email
+
+    # Reset the log file for the next day
+    reset_log_file
 }
 
 # Call the main function
