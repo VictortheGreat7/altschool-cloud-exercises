@@ -1,0 +1,9 @@
+*.lock.hcl*
+*.tfstate*
+*.tfstate.backup*
+*.pem*
+*.cfg*
+*host-inventory*
+*.terraform*
+*.tfvars*
+*.backup*
